@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+    <title>Contact Me</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
+
+        * {
+            padding: 0;
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            box-sizing: border-box;
+        }
+
+        html {
+            overflow-x: hidden;
+        }
+
+        body {
+            width: 100%;
+            height: 100vh;
+            overflow-x: hidden;
+            overflow-y: auto;
+            background: linear-gradient(to right, rgb(255, 255, 255), rgb(254, 215, 173));
+        }
+
+        nav {
+            width: 100%;
+            height: 10vh;
+            position: fixed;
+            top: 0%;
+            left: 0%;
+            margin-bottom: 20px;
+        }
+
+
+        .nav-container {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .logo {
+            color: black;
+            font-size: 2rem;
+            font-weight: bolder;
+        }
+
+        .logo span {
+            color: rgb(109, 67, 0);
+            text-shadow: 0 0 10px rgb(109, 67, 0);
+        }
+
+        .hamburg {
+            cursor: pointer;
+            position: absolute;
+            right: 15px;
+            top: 10px;
+            color: black;
+            font-size: 2.5rem;
+            transition: 0.3s ease-in-out;
+        }
+
+        .hamburg:hover {
+            color: rgb(109, 67, 0);
+        }
+
+        .nav-container .links {
+            display: flex;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .nav-container .links a {
+            position: relative;
+            font-size: 1.2rem;
+            color: black;
+            text-decoration: none;
+            font-weight: 500;
+            transform: 0.3s linear;
+        }
+
+        .nav-container .links a::before {
+            position: absolute;
+            content: "";
+            bottom: -3px;
+            left: 0;
+            width: 0%;
+            height: 3px;
+            background-color: rgb(109, 67, 0);
+            transition: 0.2s linear;
+        }
+
+        .nav-container .links a:hover::before {
+            width: 100%;
+        }
+
+
+        .nav-container .links a:hover {
+            color: rgb(109, 67, 0);
+        }
+
+
+        .cancel {
+            color: white;
+            display: flex;
+            text-decoration: none;
+            justify-content: center;
+            padding: 15px 0;
+            align-items: center;
+            transition: 0.2s linear;
+
+        }
+
+        input {
+            border: #ccc;
+        }
+
+        .cancel:hover {
+            background-color: rgb(109, 67, 0);
+        }
+
+
+        .dropdown {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: auto;
+            backdrop-filter: brightness(40%) blur(3px);
+            box-shadow: 0 0 20px black;
+            transform: translateY(-500px);
+            transition: transform 0.3s ease-in-out;
+        }
+
+
+        .dropdown .links a {
+            color: white;
+            display: flex;
+            text-decoration: none;
+            justify-content: center;
+            padding: 15px 0;
+            align-items: center;
+            transition: 0.2s linear;
+        }
+
+        .dropdown .links a:hover {
+            background-color: rgb(109, 67, 0);
+        }
+
+        section {
+            width: 100%;
+            min-height: 100vh;
+            padding-bottom: 50px;
+        }
+
+        .main-container .content {
+            color: black;
+            width: 40%;
+            min-height: 100px;
+        }
+
+        .content h1 {
+            font-size: clamp(1rem, 2rem + 5vw, 3rem);
+        }
+
+        .content h1 span {
+            color: rgb(109, 67, 0);
+            text-shadow: 0 0 10px rgb(109, 67, 0);
+        }
+
+        form {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            background: #f9f9f9;
+            margin-bottom: 20px;
+
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            background: rgb(109, 67, 0);
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .social-links i {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 3rem;
+            height: 3rem;
+            background-color: transparent;
+            border: 0.2rem solid rgb(109, 67, 0);
+            border-radius: 50%;
+            color: rgb(109, 67, 0);
+            margin: 5px 10px;
+            font-size: 1.5rem;
+            transition: 0.2s linear;
+            margin-bottom: 30px;
+        }
+
+        section h2 {
+            margin-top: 60px;
+        }
+
+        .social-links i:hover {
+            scale: 1.3;
+            color: white;
+            background-color: rgb(109, 67, 0);
+            filter: drop-shadow(0 0 10px rgb(109, 67, 0));
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            margin-top: 20px;
+        }
+
+        h3 {
+            text-align: center;
+            margin-bottom: 20px;
+            margin-top: 20px;
+        }
+
+        button {
+            display: block;
+            margin-left: auto;
+            margin-right: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="nav-container">
+            <div class="logo" data-aos="zoom-in" data-aos-duration="1000">
+                <span>Sathishkumar</span>
+            </div>
+            <div class="links" id="navLinks">
+                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100"><a
+                        href="index.html">Home</a></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200"><a
+                        href="about.html">About</a></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300"><a
+                        href="skills.html">Skills</a></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400"><a
+                        href="services.html">Services</a></div>
+                <div class="link contact-btn" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500">
+                    <a href="contact.html">Contact Me</a>
+                </div>
+            </div>
+
+            <i class="fa-solid fa-bars hamburg" onclick="toggleMenu()"></i>
+        </div>
+        <div class="dropdown" id="mobileMenu">
+            <div class="links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="skills.html">Skills</a>
+                <a href="services.html">Services</a>
+                <a href="contact.html">Contact Me</a>
+                <i class="fa-solid fa-xmark cancel" onclick="toggleMenu()"></i>
+            </div>
+        </div>
+    </nav>
+</body>
+
+<section>
+
+
+    <h2>Contact with Email</h2>
+
+    <form action="mailto:sathishkumar6381306372@gmail.com" method="post" enctype="text/plain">
+        <input type="text" name="name" placeholder="Your Name" required><br>
+        <input type="email" name="email" placeholder="Your Email" required><br>
+        <textarea name="message" placeholder="Your Message" rows="4" required></textarea><br>
+        <button type="submit">Send Message</button>
+    </form>
+
+    <h3>Others Ways to contact Me</h3>
+
+    <div class="social-links" data-aos="flip-down" data-aos-duration="1000" data-aos-delay="1200">
+        <a href="https://wa.me/6381306372" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+        <a href="https://github.com/Kingof-code"><i class="fa-brands fa-github"></i></a>
+    </div>
+
+    <h2>Feedback Section</h2>
+    <div class="main1-container">
+        <div class="content">
+            <h3>Sathishkumar.V</h3>
+            <p>Full Stack Developer || Aspiring IAS Officer</p>
+            <p>I am passionate about web development and continuous learning.<br>Currently pursuing B.E CSE at RP
+                Sarathi Institute of Technology.</p>
+
+            <div class="rating-container">
+                <div class="rating-box" aria-required="true">
+                    <input type="radio" id="rating-5" name="rating" value="5" hidden>
+                    <label for="rating-5" class="fas fa-star"></label>
+                    <input type="radio" id="rating-4" name="rating" value="4" hidden>
+                    <label for="rating-4" class="fas fa-star"></label>
+                    <input type="radio" id="rating-3" name="rating" value="3" hidden>
+                    <label for="rating-3" class="fas fa-star"></label>
+                    <input type="radio" id="rating-2" name="rating" value="2" hidden>
+                    <label for="rating-2" class="fas fa-star"></label>
+                    <input type="radio" id="rating-1" name="rating" value="1" hidden>
+                    <label for="rating-1" class="fas fa-star"></label>
+                    <div class="emojis"></div>
+                </div>
+            </div>
+
+            <input type="text" id="class" placeholder="Enter your Name..." required>
+            <textarea id="description" placeholder="Enter your feedback..." rows="3" required></textarea>
+
+            <div class="buttons">
+                <button onclick="sendWhatsApp()">Send via WhatsApp</button>
+                <button onclick="sendSMS()">Send via SMS</button>
+                <button onclick="sendEmail()">Send via Email</button>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        .main1-container {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            background: #f9f9f9;
+            margin-bottom: 20px;
+            box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.2);
+        }
+
+        .content {
+            max-width: 600px;
+            margin: auto;
+            background: #f9f9f9;
+            margin-bottom: 20px;
+            box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.2);
+        }
+
+        #name1,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 5px;
+            border: none;
+            outline: none;
+            font-size: 16px;
+        }
+
+        .rating-box {
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: center;
+            gap: 10px;
+            position: relative;
+            margin-top: 5px;
+            padding: 20px;
+            margin-bottom: 20px;
+
+        }
+
+        .rating-box label {
+            display: flex;
+            font-size: 40px;
+            cursor: pointer;
+            transition: 0.3s;
+            outline: #000000;
+        }
+
+        input:not(:checked)~label {
+            color: #eeeeee3a;
+        }
+
+        input:checked~label {
+            color: #ffa534;
+            animation: filling-animation .7s forwards;
+            filter: drop-shadow(0px 0px 10px #ffffff3f);
+        }
+
+        .emojis {
+            position: absolute;
+            bottom: -27px;
+            font-size: 35px;
+            color: white;
+            filter: drop-shadow(0px 0px 10px #ffffff3f);
+        }
+
+        #rating-1:checked~.emojis::after {
+            content: '😞';
+        }
+
+        #rating-2:checked~.emojis::after {
+            content: '😐';
+        }
+
+        #rating-3:checked~.emojis::after {
+            content: '🙂';
+        }
+
+        #rating-4:checked~.emojis::after {
+            content: '😃';
+        }
+
+        #rating-5:checked~.emojis::after {
+            content: '😍';
+        }
+
+        @keyframes filling-animation {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            30% {
+                transform: scale(0);
+            }
+
+            60% {
+                transform: scale(1.2);
+            }
+        }
+
+        .buttons button {
+            margin-top: 20px;
+            padding: 10px;
+            background: #25D366;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-right: 10px;
+        }
+
+        .buttons button:nth-child(2) {
+            background: #007AFF;
+        }
+
+        .buttons button:nth-child(3) {
+            background: #FF3B30;
+        }
+    </style>
+
+    <script>
+        function toggleMenu() {
+            const navbar = document.getElementById("mobileMenu");
+            navbar.style.transform = navbar.style.transform === "translateY(0px)" ? "translateY(-500px)" : "translateY(0px)";
+        }
+
+        function sendWhatsApp() {
+            let rating = document.querySelector('input[name="rating"]:checked');
+            let description = document.getElementById("description").value.trim();
+            let name = document.getElementById("name1").value.trim() || "Anonymous";
+
+            if (!rating) {
+                alert("Please select a rating!");
+                return;
+            }
+
+            let emoji = getEmoji(rating.value);
+            let message = `👤 Name: ${name}\n⭐ Rating: ${rating.value} Stars ${emoji}\n📝 Feedback: ${description || "No description provided."}`;
+
+            let whatsappNumber = "919585439029";
+            let whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+            window.open(whatsappURL, "_blank");
+        }
+
+        function sendSMS() {
+            let rating = document.querySelector('input[name="rating"]:checked');
+            let description = document.getElementById("description").value.trim();
+            let name = document.getElementById("name1").value.trim() || "Anonymous";
+
+            if (!rating) {
+                alert("Please select a rating!");
+                return;
+            }
+
+            let emoji = getEmoji(rating.value);
+            let message = `👤 Name: ${name}\n⭐ Rating: ${rating.value} Stars ${emoji}\n📝 Feedback: ${description || "No description provided."}`;
+
+            let smsNumber = `sms:+916381306372?body=${encodeURIComponent(message)}`;
+            window.location.href = smsNumber;
+        }
+
+        function sendEmail() {
+            let rating = document.querySelector('input[name="rating"]:checked');
+            let description = document.getElementById("description").value.trim();
+            let name = document.getElementById("name1").value.trim() || "Anonymous";
+
+            if (!rating) {
+                alert("Please select a rating!");
+                return;
+            }
+
+            let emoji = getEmoji(rating.value);
+            let email = "sathishkumar6381306372@gmail.com";
+            let subject = "New Rating Received!";
+            let body = `👤 Name: ${name}\n⭐ Rating: ${rating.value} Stars ${emoji}\n📝 Feedback: ${description || "No description provided."}`;
+
+            let mailtoURL = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            window.open(mailtoURL, "_blank");
+        }
+
+        function getEmoji(rating) {
+            switch (rating) {
+                case "1": return "😞";
+                case "2": return "😐";
+                case "3": return "🙂";
+                case "4": return "😃";
+                case "5": return "😍";
+                default: return "";
+            }
+        }
+
+    </script>
+
+</section>
+
+</html>

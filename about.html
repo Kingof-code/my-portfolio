@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+    <title>About Me(Sathishkumar.V)</title>
+</head>
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
+
+    * {
+        padding: 0;
+        margin: 0;
+        font-family: 'Poppins', sans-serif;
+        box-sizing: border-box;
+    }
+
+    html {
+        overflow-x: hidden;
+    }
+
+    body {
+        width: 100%;
+        height: 100vh;
+        overflow-x: hidden;
+        overflow-y: auto;
+        background: linear-gradient(to right, rgb(255, 255, 255), rgb(254, 215, 173));
+    }
+
+    nav {
+        width: 100%;
+        height: 10vh;
+        position:fixed;
+        top: 0%;
+        left: 0%;
+    }
+
+
+    .nav-container {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .logo {
+        color: black;
+        font-size: 2rem;
+        font-weight: bolder;
+    }
+
+    .logo span {
+        color: rgb(109, 67, 0);
+        text-shadow: 0 0 10px rgb(109, 67, 0);
+    }
+
+    .hamburg {
+        cursor: pointer;
+        position: absolute;
+        right: 15px;
+        top: 10px;
+        color: black;
+        font-size: 2.5rem;
+        transition: 0.3s ease-in-out;
+    }
+
+    .hamburg:hover {
+        color: rgb(109, 67, 0);
+    }
+
+    .nav-container .links {
+        display: flex;
+        gap: 3rem;
+        align-items: center;
+    }
+
+    .nav-container .links a {
+        position: relative;
+        font-size: 1.2rem;
+        color: black;
+        text-decoration: none;
+        font-weight: 500;
+        transform: 0.3s linear;
+    }
+
+    .nav-container .links a::before {
+        position: absolute;
+        content: "";
+        bottom: -3px;
+        left: 0;
+        width: 0%;
+        height: 3px;
+        background-color: rgb(109, 67, 0);
+        transition: 0.2s linear;
+    }
+
+    .nav-container .links a:hover::before {
+        width: 100%;
+    }
+
+
+    .nav-container .links a:hover {
+        color: rgb(109, 67, 0);
+    }
+
+
+    .cancel {
+        color: white;
+        display: flex;
+        text-decoration: none;
+        justify-content: center;
+        padding: 15px 0;
+        align-items: center;
+        transition: 0.2s linear;
+
+    }
+
+    .cancel:hover {
+        background-color: rgb(109, 67, 0);
+    }
+
+
+    .dropdown {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: auto;
+        backdrop-filter: brightness(40%) blur(3px);
+        box-shadow: 0 0 20px black;
+        transform: translateY(-500px);
+        transition: transform 0.3s ease-in-out;
+    }
+
+
+    .dropdown .links a {
+        color: white;
+        display: flex;
+        text-decoration: none;
+        justify-content: center;
+        padding: 15px 0;
+        align-items: center;
+        transition: 0.2s linear;
+    }
+
+    .dropdown .links a:hover {
+        background-color: rgb(109, 67, 0);
+    }
+
+    section {
+        width: 100%;
+        min-height: 100vh;
+        padding-bottom: 50px;
+    }
+
+    .content h1 {
+        font-size: clamp(1rem, 2rem + 5vw, 3rem);
+    }
+
+    .content h1 span {
+        color: rgb(109, 67, 0);
+        text-shadow: 0 0 10px rgb(109, 67, 0);
+    }
+
+    .content .typewriter {
+        font-weight: 600;
+        font-size: clamp(1rem, 1rem + 5vw, 2rem);
+    }
+
+    @media (max-width: 768px) {
+        .about-container {
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .about-image img {
+            width: 200px;
+        }
+
+        body {
+            overflow-y: visible;
+        }
+
+        nav .logo {
+            position: absolute;
+            top: 16px;
+            left: 15px;
+            font-size: 1.5rem;
+        }
+
+        .main-container {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .nav-container .links {
+            display: none;
+        }
+
+        .hamburg {
+            display: block;
+        }
+
+        .cancel {
+            color: white;
+        }
+    }
+</style>
+
+<body>
+    <nav>
+        <div class="nav-container">
+            <div class="logo" data-aos="zoom-in" data-aos-duration="1000">
+                <span>Sathishkumar</span>
+            </div>
+            <div class="links" id="navLinks">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="skills.html">Skills</a>
+                <a href="services.html">Services</a>
+                <a href="contact.html">Contact Me</a>
+            </div>
+            <i class="fa-solid fa-bars hamburg" onclick="toggleMenu()"></i>
+        </div>
+        <div class="dropdown" id="mobileMenu">
+            <div class="links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="skills.html">Skills</a>
+                <a href="services.html">Services</a>
+                <a href="contact.html">Contact Me</a>
+                <i class="fa-solid fa-xmark cancel" onclick="toggleMenu()"></i>
+            </div>
+        </div>
+    </nav>
+
+    <style>
+        .about-section {
+            background-color: transparent;
+            padding: 50px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .about-container {
+            display: flex;
+            max-width: 1000px;
+            width: 90%;
+            align-items: center;
+            justify-content: space-between;
+            gap: 50px;
+        }
+
+        .about-content {
+            max-width: 600px;
+            color: #333;
+        }
+
+        .about-image image {
+            width: 300px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .about-content h1 {
+            font-size: 36px;
+            color: #222;
+            margin-bottom: 15px;
+        }
+
+        .about-content p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .about-content span {
+            color: rgb(109, 67, 0);
+            font-weight: bold;
+        }
+
+        .btn button {
+            width: 40%;
+            height: 6vh;
+            margin: 30px;
+            background-color: rgb(109, 67, 0);
+            color: white;
+            border: none;
+            outline: none;
+            font-size: 100%;
+            font-weight: 700;
+            border-radius: 5px;
+            transition: 0.2s linear;
+        }
+
+        .btn button:hover {
+            scale: 1.1;
+            color: rgb(109, 67, 0);
+            border: 2px solid rgb(109, 67, 0);
+            background-color: transparent;
+            font-weight: 700;
+            box-shadow: 0 0 40px rgb(109, 67, 0);
+        }
+
+        .cancel {
+            color: white;
+            display: flex;
+            text-decoration: none;
+            justify-content: center;
+            padding: 15px 0;
+            align-items: center;
+            transition: 0.2s linear;
+
+        }
+
+        .cancel:hover {
+            background-color: rgb(109, 67, 0);
+        }
+    </style>
+
+    <section class="about-section">
+        <div class="about-container">
+            <div class="about-content">
+                <h1>About Me</h1>
+                <div class="about-image">
+                    <img src="main.png" alt="Sathishkumar Profile">
+                </div>
+                <p>Hello! I'm <span>Sathishkumar.V</span>, a passionate Full Stack Developer specializing in MERN
+                    Stack.<br> I love building scalable web applications and solving real-world problems with code.</p>
+                <p>Currently pursuing B.E CSE at <span>R P Sarathi Institute of Technology</span>.</p>
+                <p>I started with no knowledge at all, but now I have completed my studies while also attending online
+                    classes and certification courses. I have earned many certificates in HTML, CSS, JavaScript, Python,
+                    and more. 😊🎓</p>
+                <a class="btn" href="Sathishkumar_Resume.pdf"><button>Download Resume</button></a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function toggleMenu() {
+            const navbar = document.getElementById("mobileMenu");
+            navbar.style.transform = navbar.style.transform === "translateY(0px)" ? "translateY(-500px)" : "translateY(0px)";
+        }
+    </script>
+</body>
+
+</html>
