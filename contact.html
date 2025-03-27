@@ -195,11 +195,22 @@
         }
 
         button {
+            display: flex;
             background: rgb(109, 67, 0);
             color: white;
             padding: 10px;
             border: none;
             cursor: pointer;
+            gap: 20px;
+        }
+
+        button :hover {
+            scale: 1.1;
+            color: rgb(109, 67, 0);
+            border: 2px solid rgb(109, 67, 0);
+            background-color: transparent;
+            font-weight: 700;
+            box-shadow: 0 0 40px rgb(109, 67, 0);
         }
 
         .social-links {
@@ -289,10 +300,7 @@
             </div>
         </div>
     </nav>
-    <h1>Hello, Sathishkumar!</h1>
-    <button onclick="showMessage()">Click Me</button>
 
-    <script src="js/script.js"></script>
 </body>
 
 <section>
@@ -341,11 +349,24 @@
             <input type="text" id="class" placeholder="Enter your Name..." required>
             <textarea id="description" placeholder="Enter your feedback..." rows="3" required></textarea>
 
-            <div class="buttons">
-                <button onclick="sendWhatsApp()">Send via WhatsApp</button>
-                <button onclick="sendSMS()">Send via SMS</button>
-                <button onclick="sendEmail()">Send via Email</button>
-            </div>
+
+            <h3>Send Your Feedback</h3>
+
+            <a href="https://wa.me/6381306372?text=Hello%20Sathishkumar,%20Here%20is%20my%20feedback:%0A%0AName:%20[Your Name]%0ARating:%20[Your Rating]%0AFeedback:%20[Your Feedback]"
+                target="_blank">
+                <button type="button" class="whatsapp-btn">Send via WhatsApp</button>
+            </a>
+
+            <a
+                href="sms:6381306372?body=Hello%20Sathishkumar,%20Here%20is%20my%20feedback:%0A%0AName:%20[Your Name]%0ARating:%20[Your Rating]%0AFeedback:%20[Your Feedback]">
+                <button type="button" class="sms-btn">Send via SMS</button>
+            </a>
+
+            <a
+                href="mailto:sathishkumar6381306372@gmail.com?subject=Feedback%20for%20Portfolio&body=Hello%20Sathishkumar,%0A%0AName:%20[Your Name]%0ARating:%20[Your Rating]%0AFeedback:%20[Your Feedback]">
+                <button type="button" class="email-btn">Send via Email</button>
+            </a>
+
         </div>
     </div>
 
@@ -360,6 +381,9 @@
             margin-bottom: 20px;
             box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.2);
         }
+
+
+
 
         .content {
             max-width: 600px;
@@ -397,7 +421,8 @@
             font-size: 40px;
             cursor: pointer;
             transition: 0.3s;
-            outline: #000000;
+            color: lightgray;
+            text-shadow: 0 0 2px gray;
         }
 
         input:not(:checked)~label {
@@ -453,29 +478,9 @@
                 transform: scale(1.2);
             }
         }
-
-        .buttons button {
-            margin-top: 20px;
-            padding: 10px;
-            background: #25D366;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
-            margin-right: 10px;
-        }
-
-        .buttons button:nth-child(2) {
-            background: #007AFF;
-        }
-
-        .buttons button:nth-child(3) {
-            background: #FF3B30;
-        }
     </style>
 
-    
+
 </section>
 
 </html>
