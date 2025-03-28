@@ -334,52 +334,53 @@
         <a href="https://github.com/Kingof-code"><i class="fa-brands fa-github"></i></a>
     </div>
 
-    <h2>Feedback Section</h2>
-    <div class="main1-container">
-        <div class="content">
-            <h3>Sathishkumar.V</h3>
-            <p>Full Stack Developer || Aspiring IAS Officer</p>
-            <p>I am passionate about web development and continuous learning.<br>Currently pursuing B.E CSE at RP
-                Sarathi Institute of Technology.</p>
+    div class="rating-container">
 
-            <div class="rating-container">
-                <div class="rating-box" aria-required="true">
-                    <input type="radio" id="rating-5" name="rating" value="5" hidden>
-                    <label for="rating-5" class="fas fa-star"></label>
-                    <input type="radio" id="rating-4" name="rating" value="4" hidden>
-                    <label for="rating-4" class="fas fa-star"></label>
-                    <input type="radio" id="rating-3" name="rating" value="3" hidden>
-                    <label for="rating-3" class="fas fa-star"></label>
-                    <input type="radio" id="rating-2" name="rating" value="2" hidden>
-                    <label for="rating-2" class="fas fa-star"></label>
-                    <input type="radio" id="rating-1" name="rating" value="1" hidden>
-                    <label for="rating-1" class="fas fa-star"></label>
-                    <div class="emojis"></div>
-                </div>
+            <div class="rating-box">
+
+                <input type="radio" id="rating-5" name="rating" value="5" hidden>
+
+                <label for="rating-5" class="fas fa-star"></label>
+
+                <input type="radio" id="rating-4" name="rating" value="4" hidden>
+
+                <label for="rating-4" class="fas fa-star"></label>
+
+                <input type="radio" id="rating-3" name="rating" value="3" hidden>
+
+                <label for="rating-3" class="fas fa-star"></label>
+
+                <input type="radio" id="rating-2" name="rating" value="2" hidden>
+
+                <label for="rating-2" class="fas fa-star"></label>
+
+                <input type="radio" id="rating-1" name="rating" value="1" hidden>
+
+                <label for="rating-1" class="fas fa-star"></label>
+
+                <div class="emojis"></div>
+
             </div>
 
-            <input type="text" id="class" placeholder="Enter your Name..." required>
-            <textarea id="description" placeholder="Enter your feedback..." rows="3" required></textarea>
-
-            <br>
-
-            <h3>Send Your Feedback</h3>
-
-            <a href="https://wa.me/6381306372?text=Hello%20Sathishkumar,%20Here%20is%20my%20feedback:%0A%0AName:%20YourNameHere%0ARating:%20YourRatingHere%0AFeedback:%20YourFeedbackHere"
-                target="_blank">
-                <button type="button" class="whatsapp-btn">Send via WhatsApp</button>
-            </a>
-            <a
-                href="sms:6381306372?body=Hello%20Sathishkumar,%20Here%20is%20my%20feedback:%0A%0AName:%20YourNameHere%0ARating:%20YourRatingHere%0AFeedback:%20YourFeedbackHere">
-                <button type="button" class="sms-btn">Send via SMS</button>
-            </a>
-            <a
-                href="mailto:sathishkumar6381306372@gmail.com?subject=Feedback%20for%20Portfolio&body=Hello%20Sathishkumar,%0A%0AName:%20YourNameHere%0ARating:%20YourRatingHere%0AFeedback:%20YourFeedbackHere">
-                <button type="button" class="email-btn">Send via Email</button>
-            </a>
         </div>
-    </div>
-    </div>
+
+
+
+        <input type="text" id="name1" placeholder="Enter your Name...">
+
+        <textarea id="description" placeholder="Enter your feedback..." rows="3"></textarea>
+
+
+
+        <div class="buttons">
+
+            <button onclick="sendWhatsApp()">Send via WhatsApp</button>
+
+            <button onclick="sendSMS()">Send via SMS</button>
+
+            <button onclick="sendEmail()">Send via Email</button>
+
+        </div>
 
     <style>
         .main1-container {
@@ -508,5 +509,7 @@
     </style>
 
 </section>
+
+    
 
 </html>
