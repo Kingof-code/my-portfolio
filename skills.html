@@ -185,6 +185,8 @@
         section {
             width: 100%;
             height: 90vh;
+            margin-top: 60px;
+            justify-items: center;
         }
 
         .main-container .content {
@@ -201,12 +203,51 @@
             color: rgb(109, 67, 0);
             text-shadow: 0 0 10px rgb(109, 67, 0);
         }
+        
+        h3{
+          margin-top: 30px;
+          margin-bottom: 20px;
+        }
+        
+        .skill-category {
+          display: flex;
+        }
+        
+        @media (max-width: 768px) {
+
+        body {
+            overflow-y: visible;
+        }
+
+        nav .logo {
+            position: absolute;
+            top: 16px;
+            left: 15px;
+            font-size: 1.5rem;
+        }
+
+        .main-container {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .nav-container .links {
+            display: none;
+        }
+
+        .hamburg {
+            display: block;
+        }
+
+        .cancel {
+            color: white;
+        }
     </style>
 
     <section class="skills">
-        <h1>My Skills</h1>
+        <h2>My Skills</h2>
+        <h3>Frontend Development</h3>
         <div class="skill-category">
-            <h2>Frontend Development</h2>
             <div class="skill">
                 <img src="icons/html.png" alt="HTML">
                 <p>HTML</p>
@@ -224,9 +265,9 @@
                 <p>React.js</p>
             </div>
         </div>
-
+        
+            <h3>Backend Development</h3>
         <div class="skill-category">
-            <h2>Backend Development</h2>
             <div class="skill">
                 <img src="icons/node.png" alt="Node.js">
                 <p>Node.js</p>
@@ -237,8 +278,8 @@
             </div>
         </div>
 
+            <h3>Databases</h3>
         <div class="skill-category">
-            <h2>Databases</h2>
             <div class="skill">
                 <img src="icons/mongodb.png" alt="MongoDB">
                 <p>MongoDB</p>
@@ -249,8 +290,8 @@
             </div>
         </div>
 
+            <h3>Other Tools</h3>
         <div class="skill-category">
-            <h2>Other Tools</h2>
             <div class="skill">
                 <img src="icons/git.png" alt="Git">
                 <p>Git</p>
@@ -259,10 +300,7 @@
                 <img src="icons/vscode.png" alt="VS Code">
                 <p>VS Code</p>
             </div>
-            <div class="skill">
-                <img src="icons/postman.png" alt="Postman">
-                <p>Postman</p>
-            </div>
+
         </div>
     </section>
     <script>
