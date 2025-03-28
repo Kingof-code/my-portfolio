@@ -508,6 +508,148 @@
 
 </section>
 
-    
+<script>
+
+    function toggleMenu() {
+
+        const navbar = document.getElementById("mobileMenu");
+
+        navbar.style.transform = navbar.style.transform === "translateY(0px)" ? "translateY(-500px)" : "translateY(0px)";
+
+    }
+
+
+
+    function sendWhatsApp() {
+
+        let rating = document.querySelector('input[name="rating"]:checked');
+
+        let description = document.getElementById("description").value.trim();
+
+        let name = document.getElementById("name1").value.trim() || "Anonymous";
+
+
+
+        if (!rating) {
+
+            alert("Please select a rating!");
+
+            return;
+
+        }
+
+
+
+        let emoji = getEmoji(rating.value);
+
+        let message = 👤 Name: ${name}\n⭐ Rating: ${rating.value} Stars ${emoji}\n📝 Feedback: ${description || "No description provided."};
+
+
+
+        let whatsappNumber = "919585439029";
+
+        let whatsappURL = https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)};
+
+        window.open(whatsappURL, "_blank");
+
+    }
+
+
+
+    function sendSMS() {
+
+        let rating = document.querySelector('input[name="rating"]:checked');
+
+        let description = document.getElementById("description").value.trim();
+
+        let name = document.getElementById("name1").value.trim() || "Anonymous";
+
+
+
+        if (!rating) {
+
+            alert("Please select a rating!");
+
+            return;
+
+        }
+
+
+
+        let emoji = getEmoji(rating.value);
+
+        let message = 👤 Name: ${name}\n⭐ Rating: ${rating.value} Stars ${emoji}\n📝 Feedback: ${description || "No description provided."};
+
+
+
+        let smsNumber = sms:+916381306372?body=${encodeURIComponent(message)};
+
+        window.location.href = smsNumber;
+
+    }
+
+
+
+    function sendEmail() {
+
+        let rating = document.querySelector('input[name="rating"]:checked');
+
+        let description = document.getElementById("description").value.trim();
+
+        let name = document.getElementById("name1").value.trim() || "Anonymous";
+
+
+
+        if (!rating) {
+
+            alert("Please select a rating!");
+
+            return;
+
+        }
+
+
+
+        let emoji = getEmoji(rating.value);
+
+        let email = "sathishkumar6381306372@gmail.com";
+
+        let subject = "New Rating Received!";
+
+        let body = 👤 Name: ${name}\n⭐ Rating: ${rating.value} Stars ${emoji}\n📝 Feedback: ${description || "No description provided."};
+
+
+
+        let mailtoURL = mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)};
+
+        window.open(mailtoURL, "_blank");
+
+    }
+
+
+
+    function getEmoji(rating) {
+
+        switch (rating) {
+
+            case "1": return "😞";
+
+            case "2": return "😐";
+
+            case "3": return "🙂";
+
+            case "4": return "😃";
+
+            case "5": return "😍";
+
+            default: return "";
+
+        }
+
+    }
+
+
+
+</script>
 
 </html>
