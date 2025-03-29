@@ -33,7 +33,7 @@
     nav {
         width: 100%;
         height: 10vh;
-        position:fixed;
+        position: fixed;
         top: 0%;
         left: 0%;
     }
@@ -169,45 +169,6 @@
         font-weight: 600;
         font-size: clamp(1rem, 1rem + 5vw, 2rem);
     }
-
-    @media (max-width: 768px) {
-        .about-container {
-            flex-direction: column;
-            text-align: center;
-        }
-
-        .about-image img {
-            width: 200px;
-        }
-
-        body {
-            overflow-y: visible;
-        }
-
-        nav .logo {
-            position: absolute;
-            top: 16px;
-            left: 15px;
-            font-size: 1.5rem;
-        }
-
-        .main-container {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .nav-container .links {
-            display: none;
-        }
-
-        .hamburg {
-            display: block;
-        }
-
-        .cancel {
-            color: white;
-        }
-    }
 </style>
 
 <body>
@@ -220,7 +181,7 @@
                 <a href="index.html">Home</a>
                 <a href="about.html">About</a>
                 <a href="skills.html">Skills</a>
-                <a href="services.html">Project</a>
+                <a href="services.html">Services</a>
                 <a href="contact.html">Contact Me</a>
             </div>
             <i class="fa-solid fa-bars hamburg" onclick="toggleMenu()"></i>
@@ -230,7 +191,7 @@
                 <a href="index.html">Home</a>
                 <a href="about.html">About</a>
                 <a href="skills.html">Skills</a>
-                <a href="services.html">Project</a>
+                <a href="services.html">Services</a>
                 <a href="contact.html">Contact Me</a>
                 <i class="fa-solid fa-xmark cancel" onclick="toggleMenu()"></i>
             </div>
@@ -241,37 +202,38 @@
         .about-section {
             background-color: transparent;
             padding: 50px 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            width: 100%;
             margin-top: 20px;
         }
 
         .about-container {
             display: flex;
-            max-width: 1000px;
-            width: 90%;
+            width: 100%;
+            height: auto;
             align-items: center;
             justify-content: space-between;
             gap: 50px;
         }
 
         .about-content {
-            max-width: 600px;
-            color: #333;
-        }
-
-        .about-image image {
-
-            height: auto;
-            border-radius: 10px;
-            z-index: -1;
-            width: 50%;
-            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
-        }
-
-        .about-image .image img {
             width: 100%;
+            color: #333;
+            display: flex;
+            align-items: center;
+        }
+
+        .about-image {
+            width: 50%;
+            height: auto;
+        }
+
+        .about-image img {
+            width: 563px;
+            height: auto;
+            margin-left: 30px;
+            border-radius: 10px;
+            border: 2px solid #000;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
         }
 
         .about-content h1 {
@@ -328,25 +290,95 @@
         .cancel:hover {
             background-color: rgb(109, 67, 0);
         }
+
+        .content {
+            width: 50%;
+        }
     </style>
 
     <section class="about-section">
+        <h1>About Me</h1>
         <div class="about-container">
             <div class="about-content">
-                <h1>About Me</h1>
                 <div class="about-image">
-                    <img src="main.png" alt="Sathishkumar Profile">
+                    <img src="professional.jpg" alt="Sathishkumar Profile">
                 </div>
-                <p>Hello! I'm <span>Sathishkumar.V</span>, a passionate Full Stack Developer specializing in MERN
-                    Stack.<br> I love building scalable web applications and solving real-world problems with code.</p>
-                <p>Currently pursuing B.E CSE at <span>R P Sarathi Institute of Technology</span>.</p>
-                <p>I started with no knowledge at all, but now I have completed my studies while also attending online
-                    classes and certification courses. I have earned many certificates in HTML, CSS, JavaScript, Python,
-                    and more. 😊🎓</p>
-                <a class="btn" href="Sathishkumar_Resume.pdf"><button>Download Resume</button></a>
+                <div class="content">
+                    <p>Hello! I'm <span>Sathishkumar.V</span>, a passionate Full Stack Developer specializing in MERN
+                        Stack.<br> I love building scalable web applications and solving real-world problems with code.
+                    </p>
+                    <p>Currently pursuing B.E CSE at <span>R P Sarathi Institute of Technology</span>.</p>
+                    <p>I started with no knowledge at all, but now I have completed my studies while also attending
+                        online
+                        classes and certification courses. I have earned many certificates in HTML, CSS, JavaScript,
+                        Python,
+                        and more. 😊🎓</p>
+                    <a class="btn" href="Sathishkumar_Resume.pdf"><button>Download Resume</button></a>
+                </div>
             </div>
         </div>
     </section>
+
+    <style>
+        @media (max-width: 884px) {
+            body {
+                overflow-y: visible;
+            }
+
+            section {
+                width: 100%;
+                height: auto;
+            }
+
+            .about-container {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .about-content {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .about-image{
+                width: 100%;
+                margin-bottom: 10px;
+            }
+
+            .about-image img{
+                width: 400px;
+                height: auto;
+            }
+
+            .content {
+                width: 90%;
+            }
+
+            section h1{
+                display: flex;
+                justify-content: center;
+            }
+
+            nav .logo {
+                position: absolute;
+                top: 16px;
+                left: 15px;
+                font-size: 1.5rem;
+            }
+
+            .nav-container .links {
+                display: none;
+            }
+
+            .hamburg {
+                display: block;
+            }
+
+            .cancel {
+                color: white;
+            }
+        }
+    </style>
 
     <script>
         function toggleMenu() {
