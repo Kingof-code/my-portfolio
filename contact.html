@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
     <title>Contact Me</title>
     <style>
@@ -511,12 +512,13 @@
 <script>
 
     function toggleMenu() {
-
-        const navbar = document.getElementById("mobileMenu");
-
-        navbar.style.transform = navbar.style.transform === "translateY(0px)" ? "translateY(-500px)" : "translateY(0px)";
-
-    }
+            const navbar = document.getElementById("mobileMenu");
+            if (navbar.style.transform === "translateY(0px)") {
+                navbar.style.transform = "translateY(-500px)";
+            } else {
+                navbar.style.transform = "translateY(0px)";
+            }
+        }
 
 
 
